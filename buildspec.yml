@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Installing dependencies...
+      - cd frontend && npm install
+      - cd ../backend && npm install
+
+  build:
+    commands:
+      - echo Building frontend...
+      - cd ../frontend
+      - npm run build
+      - echo Building backend...
+      - cd ../backend
+      - echo Backend build complete
+
+  post_build:
+    commands:
+      - echo Deploying frontend to S3...
+      - aws s3 sync ../frontend/out s3://my-nextjs-frontend --delete
+      - aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
+      - echo Preparing backend for deployment...
+
+artifacts:
+  files:
+    - backend/**/*
+  discard-paths: yes

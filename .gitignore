@@ -1,0 +1,11 @@
+nano .gitignore
+```
+
+**Paste this:**
+```
+node_modules/
+.next/
+out/
+.env.local
+.env
+.DS_Store
