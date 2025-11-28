@@ -4,30 +4,33 @@ phases:
   install:
     runtime-versions:
       nodejs: 20
-      
+
   pre_build:
     commands:
-      - echo Installing dependencies...
+      - echo Installing frontend dependencies...
       - cd frontend && npm install
+      - echo Installing backend dependencies...
       - cd ../backend && npm install
-      
+
   build:
     commands:
-      - echo Building frontend...
+      - echo Building Next.js frontend...
       - cd ../frontend
       - npm run build
-      - echo Building backend...
+      - echo Frontend build complete!
+      - echo Backend is ready for deployment...
       - cd ../backend
-      - echo Backend build complete
-      
+
   post_build:
     commands:
       - echo Deploying frontend to S3...
-      - aws s3 sync frontend/out s3://my-nextjs-frontend --delete
-      - echo Frontend deployed successfully
-      - echo Preparing backend for deployment...
+      - cd ../frontend
+      - aws s3 sync out s3://naveen-nextjs-frontend --delete
+      - echo Frontend deployed to S3 successfully!
+      - echo Backend artifact is being prepared for Elastic Beanstalk...
 
 artifacts:
   files:
     - '**/*'
   base-directory: backend
+  name: backend-deployment
