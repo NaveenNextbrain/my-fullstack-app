@@ -22,10 +22,10 @@ export default function Home() {
     <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600">
       <div className="bg-white p-8 rounded-lg shadow-2xl max-w-md">
         <h1 className="text-4xl font-bold mb-4 text-gray-800">
-          Next.js + Node.js
+          Naveen + VIP
         </h1>
         <p className="text-gray-600 mb-4">
-          Full-stack app with CI/CD Pipeline
+          Full-stack Naveen with CI/CD Pipeline
         </p>
         <div className="bg-blue-50 p-4 rounded border border-blue-200">
           {loading ? (
