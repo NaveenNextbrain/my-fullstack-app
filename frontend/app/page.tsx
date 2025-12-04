@@ -326,7 +326,7 @@ export default function Home() {
       <footer className="py-12 px-6 border-t border-white/10">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-gray-400">© 2025 NaveenDev. Built with Next.js + Node.js on AWS</p>
-          <p className="text-gray-500 text-sm mt-2">Deployed via CI/CD Pipeline</p>
+          <p className="text-gray-500 text-sm mt-2">Naveen Deployed via CI/CD Pipeline</p>
         </div>
       </footer>
     </div>
