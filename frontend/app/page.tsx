@@ -486,7 +486,7 @@ export default function Home() {
               </div>
               <div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-pink-400 bg-clip-text text-transparent">NaveenDev</span>
-                <div className="text-xs text-gray-400">Full-Stack Platform</div>
+                <div className="text-xs text-gray-400">Naveen Full-Stack Platform</div>
               </div>
             </div>
             <div className="hidden md:flex space-x-8 items-center">
